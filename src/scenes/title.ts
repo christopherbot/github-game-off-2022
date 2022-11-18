@@ -33,7 +33,7 @@ export class Title extends BaseScene {
 
   update(): void {
     if (Phaser.Input.Keyboard.JustDown(this.enterKey)) {
-      console.log('~~~ start')
+      this.scene.launch('game').stop()
     }
   }
 }

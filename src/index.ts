@@ -1,6 +1,6 @@
 import 'phaser'
 import { gameTitle } from './game-title'
-import { Title } from './scenes'
+import { Game, Title } from './scenes'
 
 if (module.hot) {
   module.hot.accept()
@@ -18,12 +18,16 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
     height: window.innerHeight,
   },
   physics: {
-    default: 'arcade',
-    arcade: {
-      gravity: {
-        y: 1000,
-      },
-      // debug: true,
+    // default: 'arcade',
+    // arcade: {
+    //   gravity: {
+    //     y: 1000,
+    //   },
+    //   // debug: true,
+    // },
+    default: 'matter',
+    matter: {
+      debug: true,
     },
   },
   render: {
@@ -35,7 +39,10 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
   audio: {
     disableWebAudio: false,
   },
-  scene: [Title],
+  scene: [
+    // Title,
+    Game,
+  ],
 }
 
 window.game = new Phaser.Game(gameConfig)

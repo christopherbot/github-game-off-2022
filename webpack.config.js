@@ -88,14 +88,14 @@ const config = {
       inlineSource: '.(js|css)$',
       minify: false,
     }),
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     {
-    //       from: 'assets',
-    //       to: 'assets',
-    //     },
-    //   ],
-    // }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'assets',
+          to: 'assets',
+        },
+      ],
+    }),
   ],
 
   devtool: isProd ? false : 'eval',
